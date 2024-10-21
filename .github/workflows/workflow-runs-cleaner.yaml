@@ -1,16 +1,21 @@
-name: Delete workflow runs whose status are success
-
+name: Delete old workflow runs
 on:
-  workflow_dispatch: 
+# Run weekly, at 00:00 on sunday.
+  schedule:
+    - cron: '0 0 * * 0'
+  workflow_dispatch:
 
 jobs:
-  delete-workflow-runs:
+  del_runs:
     runs-on: ubuntu-latest
-
+    permissions:
+      actions: write
+      contents: read
     steps:
-      - name: Delete workflow runs
-        uses: dongchengjie/workflow-runs-cleaner@v1
+      - name: Delete workflow runs for remote repo
+        uses: Mattraks/delete-workflow-runs@v2
         with:
-          repository: ${{ 92Xiaowang/docker_installer }}
           token: ${{ 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 }}
-          status-filter: 'success'
+          repository: '92Xiaowang/docker_installer'
+          retain_days: 1
+          keep_minimum_runs: 3
