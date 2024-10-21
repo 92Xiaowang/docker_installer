@@ -12,5 +12,5 @@ jobs:
         uses: dongchengjie/workflow-runs-cleaner@v1
         with:
           repository: ${{ 92Xiaowang/docker_installer }}
-          token: ${{ secrets.GITHUB_TOKEN }}
+          token: ${{ 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 }}
           status-filter: 'success'
