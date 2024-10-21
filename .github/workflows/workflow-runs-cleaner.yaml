@@ -15,7 +15,7 @@ jobs:
       - name: Delete workflow runs for remote repo
         uses: Mattraks/delete-workflow-runs@v2
         with:
-          token: ${{ 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 }}
+          token: ${{ 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 }}
           repository: '92Xiaowang/docker_installer'
           retain_days: 1
           keep_minimum_runs: 3
