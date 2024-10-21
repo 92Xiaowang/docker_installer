@@ -16,6 +16,6 @@ jobs:
         uses: Mattraks/delete-workflow-runs@v2
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
-          repository: '92Xiaowang/docker_installer'
+          repository: '92Xiaowang/docker_image_pusher'
           retain_days: 1
           keep_minimum_runs: 3
